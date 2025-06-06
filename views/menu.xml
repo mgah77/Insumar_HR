@@ -1,7 +1,7 @@
 
 <odoo>
     <record id="hr_holidays.menu_hr_holidays_root" model="ir.ui.menu"> <!-- ausencias -->
-        <field name="groups_id" eval="[(6, 0, [ref('parches.group_hr')])]"/>
+        <field name="groups_id" eval="[(6, 0, [ref('Insumar_HR.group_hr')])]"/>
     </record>
 
 
