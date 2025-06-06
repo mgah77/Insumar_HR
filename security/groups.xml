@@ -1,0 +1,6 @@
+<odoo>
+    <record id="group_hr" model="res.groups">
+        <field name="name">Acceso menu HR</field>
+    </record>
+</odoo>
+
