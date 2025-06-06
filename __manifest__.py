@@ -8,7 +8,7 @@
 'application': "True",
 'version': "2.0",
 'data': ['security/ir.model.access.csv',    
-         'security/grous.xml' ,
+         'security/groups.xml' ,
          'views/menu.xml',
          'views/prestamo.xml',
         
