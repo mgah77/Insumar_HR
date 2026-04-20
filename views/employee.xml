@@ -1,0 +1,67 @@
+<odoo>
+    <record model="ir.ui.view" id="view_employee_inherit_form">
+        <field name="name">hr.employee.inherit.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_account_id']" position="replace">
+            </xpath>
+            <xpath expr="//field[@name='tz']" position="replace">
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="attributes">
+                <attribute name="groups">parches.group_config</attribute>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page string="Remuneraciones">
+                    <group>
+                        <group name="sueldo" string="Sueldo">
+                            <field name="sueldo"/>
+                        </group>
+                        <group name="banco" string="Cuenta Bancaria">
+                            <field name="bank_account_id"/>
+                        </group>
+                    </group>
+                    <group>
+                            <group name="bono" string="Bonos">
+                                <field name="bono_prod"/>
+                                <field name="bono_resp"/>
+                                <field name="bono_resp_taller"/>
+                                <field name="bono_comi"/>
+                                    <field name="bono_punt"/>
+                                    <field name="bono_asist"/>
+                                    <field name="bono_movil"/>
+                                    <field name="bono_colac"/>
+                                        <field name="bono_estud"/>
+                                        <field name="bono_estud_esp"/>
+                            </group>                  
+                            <group name="capa" string="Capacitaciones">
+                                <field name="capac"/>
+                            </group> 
+                    </group>
+
+
+                </page>
+            </xpath>  
+            <xpath expr="//group[@name='work_permit']" position="after">        
+                    <group name="cotizaciones" string="Cotizaciones">
+                            <field name="afp"/>
+                            <field name="salud"/>
+                            <field name="caja"/>
+                    </group>    
+            </xpath>  
+            <xpath expr="//group[@name='work_permit']" position="replace">
+            </xpath>        
+            <xpath expr="//field[@name='passport_id']" position="replace">
+            </xpath>
+            <xpath expr="//field[@name='address_id']" position="replace">            
+            </xpath>
+             <xpath expr="//field[@name='km_home_work']" position="replace">            
+            </xpath>
+            <xpath expr="//field[@name='resource_calendar_id']" position="replace">  
+                   <field name="jornada" default="completa"/>
+                   <field name="horas" attrs="{'invisible': [('jornada', '=', 'completa')]}"/>   
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
