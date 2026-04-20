@@ -10,6 +10,7 @@
 'data': ['security/ir.model.access.csv',    
          'security/groups.xml' ,
          'views/menu.xml',
+         'views/employee.xml',
          'views/prestamo.xml',
         
 ],
