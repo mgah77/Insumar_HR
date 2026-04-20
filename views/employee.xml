@@ -49,7 +49,7 @@
                             <field name="caja"/>
                     </group>    
             </xpath>  
-            <xpath expr="//group[@name='has_work_permit']" position="replace">
+            <xpath expr="//field[@name='has_work_permit']" position="replace">
             </xpath>        
             <xpath expr="//field[@name='passport_id']" position="replace">
             </xpath>
