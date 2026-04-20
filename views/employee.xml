@@ -42,15 +42,15 @@
 
                 </page>
             </xpath>  
-            <xpath expr="//group[@name='work_permit']" position="after">        
+            <xpath expr="//separator[@name='has_work_permit']" position="after">        
                     <group name="cotizaciones" string="Cotizaciones">
                             <field name="afp"/>
                             <field name="salud"/>
                             <field name="caja"/>
                     </group>    
             </xpath>  
-            <!--xpath expr="//group[@name='work_permit']" position="replace">
-            </xpath-->        
+            <xpath expr="//group[@name='has_work_permit']" position="replace">
+            </xpath>        
             <xpath expr="//field[@name='passport_id']" position="replace">
             </xpath>
             <xpath expr="//field[@name='address_id']" position="replace">            
