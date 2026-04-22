@@ -18,7 +18,9 @@
                             <field name="sueldo"/>
                         </group>
                         <group name="banco" string="Cuenta Bancaria">
-                            <!--field name="bank_account_id"/-->
+                            <field name="banco"/>
+                            <field name="cuenta_tipo"/>
+                            <field name="cuenta_banco"/>
                         </group>
                     </group>
                     <group>
