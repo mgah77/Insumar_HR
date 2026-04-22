@@ -53,9 +53,9 @@
             </xpath>        
             <xpath expr="//field[@name='passport_id']" position="replace">
             </xpath>
-            <xpath expr="//field[@name='address_id']" position="replace">            
+            <!--xpath expr="//field[@name='address_id']" position="replace">            
             </xpath>
-             <!--xpath expr="//field[@name='km_home_work']" position="replace">            
+             <xpath expr="//field[@name='km_home_work']" position="replace">            
             </xpath-->
             <xpath expr="//field[@name='resource_calendar_id']" position="replace">  
                    <field name="jornada" default="completa"/>
