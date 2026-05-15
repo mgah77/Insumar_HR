@@ -52,8 +52,7 @@ class ParcheHR(models.Model):
         ('parcial','Parcial')], 'Jornada Laboral')
     horas = fields.Integer('Horas Semanales')
 
-    banco = fields.Many2One('hr.employee.bank.rel', string = 'Banco')
-    lugar = fields.Many2one('taller.lugar.rel', string = 'Lugar')
+    #banco = fields.Many2One('Banco', store='True')
     cuenta_banco = fields.Integer(string='Cuenta')
     cuenta_tipo = fields.Selection([
         ('cc','Cuenta Corriente'),
