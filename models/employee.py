@@ -52,7 +52,7 @@ class ParcheHR(models.Model):
         ('parcial','Parcial')], 'Jornada Laboral')
     horas = fields.Integer('Horas Semanales')
 
-    banco = fields.char(string = 'Banco')
+    banco = fields.Char(string = 'Banco')
     cuenta_banco = fields.Integer(string='Cuenta')
     cuenta_tipo = fields.Selection([
         ('cc','Cuenta Corriente'),
