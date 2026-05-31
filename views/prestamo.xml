@@ -1,4 +1,40 @@
-<odoo>
-   
+   <odoo>
+    <!-- Vista de árbol -->
+    <record id="view_hr_prestamo_tree" model="ir.ui.view">
+        <field name="name">hr.prestamo.tree</field>
+        <field name="model">hr.prestamo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>  
+                <field name="monto"/> 
+                <field name="fecha"/> 
+                <field name="saldo"/>
+                <field name="restante"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record id="view_hr_prestamo_form" model="ir.ui.view">
+        <field name="name">hr.prestamo.form</field>
+        <field name="model">hr.prestamo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="activo"  invisible="1"/> 
+                        <field name="nombre"  attrs="{'readonly': [('activo', '=', True)]}"/>  
+                        <field name="monto"  attrs="{'readonly': [('activo', '=', True)]}"/>
+                        <field name="nro_cuotas"  attrs="{'readonly': [('activo', '=', True)]}"/>
+                        <field name="cuota"/>
+                        <field name="fecha"  attrs="{'readonly': [('activo', '=', True)]}"/>
+                        <field name="mes_inicio" attrs="{'readonly': [('activo', '=', True)]}"/> 
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
 </odoo>
