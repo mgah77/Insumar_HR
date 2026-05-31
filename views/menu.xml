@@ -13,8 +13,8 @@
 <menuitem
   id="hr_prestamo_root"
   name="Prestamos"
-  parent="hr.menu_hr_employee"
-  sequence="45"
+  parent="hr.menu_hr_root"
+  sequence="40"
   groups="Insumar_HR.group_hr" />
 
   <menuitem
