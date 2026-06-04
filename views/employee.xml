@@ -7,6 +7,9 @@
             <xpath expr="//field[@name='bank_account_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//field[@name='identification_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
             <xpath expr="//field[@name='tz']" position="replace">
             </xpath>
             <xpath expr="//page[@name='hr_settings']" position="attributes">
@@ -21,7 +24,7 @@
                         <group name="banco" string="Cuenta Bancaria">
                             <field name="banco"/>
                             <field name="cuenta_tipo"/>
-                            <field name="cuenta_banco"/>
+                            <field name="cuenta_banco" widget="float"/>
                         </group>
                     </group>
                     <group>
