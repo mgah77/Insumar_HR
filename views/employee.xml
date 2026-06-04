@@ -10,6 +10,12 @@
             <xpath expr="//field[@name='identification_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//field[@name='km_home_work']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath-->
+            <xpath expr="//field[@name='place_of_birth']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath-->
             <xpath expr="//field[@name='tz']" position="replace">
             </xpath>
             <xpath expr="//page[@name='hr_settings']" position="attributes">
@@ -63,8 +69,7 @@
             </xpath>
             <!--xpath expr="//field[@name='address_id']" position="replace">            
             </xpath>
-             <xpath expr="//field[@name='km_home_work']" position="replace">            
-            </xpath-->
+           -->
             <xpath expr="//field[@name='resource_calendar_id']" position="replace">  
                    <field name="jornada" default="completa"/>
                    <field name="horas" attrs="{'invisible': [('jornada', '=', 'completa')]}"/>   
