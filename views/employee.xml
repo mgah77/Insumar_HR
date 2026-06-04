@@ -24,7 +24,7 @@
                         <group name="banco" string="Cuenta Bancaria">
                             <field name="banco"/>
                             <field name="cuenta_tipo"/>
-                            <field name="cuenta_banco" no_thousands_separator="1"/>
+                            <field name="cuenta_banco"/>
                         </group>
                     </group>
                     <group>
