@@ -13,6 +13,10 @@
             <xpath expr="//field[@name='km_home_work']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//div[@name='div_km_home_work']" position="replace">
+              
+            </xpath>
+
             <xpath expr="//field[@name='place_of_birth']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
