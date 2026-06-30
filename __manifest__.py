@@ -8,14 +8,15 @@
 'application': "True",
 'version': "2.0",
 'data': ['security/ir.model.access.csv',    
-         'security/groups.xml' ,
+         'security/groups.xml',
          'views/menu.xml',
          'views/employee.xml',
          'views/prestamo.xml',
+         'views/hr_leave_views.xml'
         
 ],
 
-'depends': ['base' , 'contacts' , 'hr' , 'parches_insumar'],
+'depends': ['base' , 'contacts' , 'hr' , 'parches_insumar','hr_holidays'],
 'installable': True,
 'application': True,
 }
