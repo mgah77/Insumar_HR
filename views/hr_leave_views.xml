@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="hr_leave_view_form_select_employee" model="ir.ui.view">
-        <field name="name">hr.leave.view.form.select.employee</field>
-        <field name="model">hr.leave</field>
-        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+    <record id="hr_leave_allocation_view_form_select_employee" model="ir.ui.view">
+        <field name="name">hr.leave.allocation.view.form.select.employee</field>
+        <field name="model">hr.leave.allocation</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_form"/>
         <field name="arch" type="xml">
             
-            <!-- 1. Hacer visible el contenedor 'title' -->
-            <xpath expr="//div[@name='title']" position="attributes">
-                <attribute name="invisible">0</attribute>
-            </xpath>
-
-            <!-- 2. Hacer visible, editable el campo employee_ids y ponerle el widget de etiquetas -->
-            <xpath expr="//div[@name='title']/field[@name='employee_ids']" position="attributes">
+            <!-- Hacemos visible, editable y sin restricción de dominio el campo empleado -->
+            <xpath expr="//group[@name='alloc_right_col']/field[@name='employee_id']" position="attributes">
                 <attribute name="invisible">0</attribute>
                 <attribute name="readonly">0</attribute>
-                <attribute name="widget">many2many_tags</attribute>
+                <attribute name="domain">[('active', '=', True)]</attribute>
             </xpath>
 
         </field>
