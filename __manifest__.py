@@ -12,7 +12,8 @@
          'views/menu.xml',
          'views/employee.xml',
          'views/prestamo.xml',
-         'views/hr_leave_views.xml'
+         'views/hr_leave_views.xml',
+         'views/sueldos.xml'
         
 ],
 
