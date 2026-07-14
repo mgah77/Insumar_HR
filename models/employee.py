@@ -5,11 +5,6 @@ from odoo.exceptions import ValidationError
 class ParcheHR(models.Model):
     _inherit = 'hr.employee'
 
-from odoo import fields, models
-
-class HrEmployeePrivate(models.Model):
-    _inherit = 'hr.employee'
-
     address_home_id = fields.Many2one(
         'res.partner', 'Private Address',
         help='Enter here the private address of the employee, not the one linked to your company.',
