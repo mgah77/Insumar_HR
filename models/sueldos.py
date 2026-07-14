@@ -10,10 +10,10 @@ class HR_Sueldos(models.Model):
     _name = 'hr.sueldos'
     _description = 'Pago de sueldos'
     _inherit = ['mail.thread']
-    _sql_constraints = [
-        ('name_unique', 'UNIQUE(name)', 'Ya existe una nómina con este mes/año. No se puede crear duplicados.'),
-        ('month_year_unique', 'UNIQUE(month_year)', 'Ya existe una nómina para este mes/año. No se puede crear duplicados.'),
-    ]
+    #_sql_constraints = [
+    #    ('name_unique', 'UNIQUE(name)', 'Ya existe una nómina con este mes/año. No se puede crear duplicados.'),
+    #    ('month_year_unique', 'UNIQUE(month_year)', 'Ya existe una nómina para este mes/año. No se puede crear duplicados.'),
+    #]
 
     name = fields.Char(string='Mes', index=True)
     month_year = fields.Char(string='Mes/Año (MMYYYY)', readonly=True, copy=False)  # Nuevo campo
