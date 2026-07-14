@@ -1,3 +1,4 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
 "access_hr_prestamo","access_hr_prestamo","model_hr_prestamo","","1","1","1","1"
 "access_hr_sueldos","access_hr_sueldos","model_hr_sueldos","","1","1","1","1"
+"access_hr_nomina","access_hr_nomina","model_hr_nomina","Insumar_HR.group_hr","1","1","1","1"
