@@ -145,7 +145,7 @@ class HR_Sueldos(models.Model):
             
             nomina_lines.append((0, 0, {
                 'empleado_id': emp.id,
-                'rut': emp.identification_id,
+                'rut': emp.work_contact_id.document_number if emp.work_contact_id else '',
                 'dias_trabajados': 30 - licencia_dias - permisos_dias,
                 'dias_ausentes': licencia_dias + permisos_dias,
                 'licencia': licencia_dias,
