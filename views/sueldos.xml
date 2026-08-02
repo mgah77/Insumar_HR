@@ -7,6 +7,7 @@
             <header>
                 <button name="export_to_excel" type="object" string="Exportar a Excel" class="oe_highlight" attrs="{'invisible': [('validar', '=', False)]}"/>
                 <button name="action_validar_nomina" type="object" string="Validar Nómina" class="oe_highlight" attrs="{'invisible': [('validar', '=', True)]}"/>
+                <button name="action_actualizar_nomina" type="object" string="Actualizar" class="oe_highlight" attrs="{'invisible': [('validar', '=', False)]}" help="Actualiza los datos de la nómina con la información más reciente (solo disponible en el mes actual)"/>
             </header>
             <sheet>
                 <div>
