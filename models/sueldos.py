@@ -193,12 +193,21 @@ class HR_Sueldos(models.Model):
                 if record.month_year != current_month_year:
                     raise UserError(_('No se puede editar una nómina validada de un mes diferente al actual.'))
                 
-                # Permitir solo ciertos campos para edición después de validar
-                allowed_fields = {'excel_file', 'file_name', 'fecha'}
-                if not all(field in allowed_fields for field in vals.keys()):
+                # Permitir ciertos campos para edición después de validar
+                allowed_fields = {'excel_file', 'file_name', 'fecha', 'observaciones'}
+                
+                # Verificar si se está actualizando desde el botón "Actualizar"
+                # Esto se detecta cuando se escriben campos relacionados con la nómina
+                is_update = any(field in vals for field in ['nomina_id', 'nomina_id_base', 'nomina_id_bonos'])
+                
+                if is_update:
+                    # Si es una actualización, permitimos todos los cambios
+                    # No hacemos ninguna restricción adicional
+                    pass
+                elif not all(field in allowed_fields for field in vals.keys()):
                     raise UserError(_('No se puede editar una nómina validada excepto observaciones y archivos.'))
-                    
-        return super(HR_Sueldos, self).write(vals)    
+                        
+        return super(HR_Sueldos, self).write(vals) 
 
     def html_to_lines(self, html_content):
         """Convierte HTML a lista de líneas, manejando <br> y <p> como saltos de línea"""
