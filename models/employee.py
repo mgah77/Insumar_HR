@@ -58,4 +58,7 @@ class ParcheHR(models.Model):
         ('cc','Cuenta Corriente'),
         ('vi','Cuenta Vista'),
         ('ah','Cuenta Ahorro')], 'Tipo de cuenta')
-    
+
+    ingreso = fields.Date(string='Fecha de Incorporación')
+    progresivo = fields.Boolean(string='Vacaciones Progresivas')
+    certi_progre = fields.Date(string='Fecha del Certificado')
