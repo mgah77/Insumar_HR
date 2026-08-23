@@ -87,7 +87,8 @@
             <xpath expr="//group[@name='managers']" position="before">  
                 <group name="ingreso" string="Ingreso">
                     <field name="ingreso"/>
-                    
+                    <field name="progresivo"/>
+                    <field name="certi_progre" attrs="{'invisible': [('progresivo', '=', False)]}"/>
                 </group>
             </xpath>
         </field>
