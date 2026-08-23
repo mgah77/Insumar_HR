@@ -84,6 +84,12 @@
                    <field name="jornada" default="completa"/>
                    <field name="horas" attrs="{'invisible': [('jornada', '=', 'completa')]}"/>   
             </xpath>
+            <xpath expr="//group[@name='managers']" position="before">  
+                <group name="ingreso" string="Ingreso">
+                    <field name="ingreso"/>
+                    
+                </group>
+            </xpath>
         </field>
     </record>
 
