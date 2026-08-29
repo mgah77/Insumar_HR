@@ -62,3 +62,4 @@ class ParcheHR(models.Model):
     ingreso = fields.Date(string='Fecha de Incorporación')
     progresivo = fields.Boolean(string='Vacaciones Progresivas')
     certi_progre = fields.Date(string='Fecha del Certificado')
+    periodo = fields.Integer(string='Período')
