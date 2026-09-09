@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_dias_administrativos" model="ir.cron">
+            <field name="name">RRHH: asignar 4 días administrativos (anual)</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave_allocation"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_asignar_dias_administrativos()</field>
+            <!-- 12 meses = 1 año (NO existe 'years' en Odoo 16) -->
+            <field name="interval_number">12</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="True"/>
+            <!-- Próximo 1 de marzo a las 06:00 -->
+            <field name="nextcall" eval="datetime(datetime.now().year + (1 if datetime.now().month > 2 else 0), 3, 1, 6, 0, 0)"/>
+        </record>
+    </data>
+</odoo>
