@@ -13,8 +13,9 @@
          'views/employee.xml',
          'views/prestamo.xml',
          'views/hr_leave_views.xml',
-         'views/sueldos.xml'
-        
+         'views/sueldos.xml',
+         'data/cron_administrativos.xml',
+         'data/cron_progresivos.xml'        
 ],
 
 'depends': ['base' , 'contacts' , 'hr' , 'parches_insumar','hr_holidays'],
