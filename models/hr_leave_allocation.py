@@ -189,12 +189,12 @@ class HrLeaveAllocation(models.Model):
                 lambda l: l.frequency == 'monthly_hire'))
         for allocation in hire_allocations:
             day = allocation._get_monthly_hire_day()
-            super(HolidaysAllocation,
+            super(HrLeaveAllocation,
                   allocation.with_context(accrual_hire_day=day)
                   )._process_accrual_plans(date_to, force_period)
         others = self - hire_allocations
         if others:
-            super(HolidaysAllocation, others)._process_accrual_plans(date_to, force_period)
+            super(HrLeaveAllocation, others)._process_accrual_plans(date_to, force_period)
 
     def _end_of_year_accrual(self):
         hire_allocations = self.filtered(
@@ -202,9 +202,9 @@ class HrLeaveAllocation(models.Model):
                 lambda l: l.frequency == 'monthly_hire'))
         for allocation in hire_allocations:
             day = allocation._get_monthly_hire_day()
-            super(HolidaysAllocation,
+            super(HrLeaveAllocation,
                   allocation.with_context(accrual_hire_day=day)
                   )._end_of_year_accrual()
         others = self - hire_allocations
         if others:
-            super(HolidaysAllocation, others)._end_of_year_accrual()
+            super(HrLeaveAllocation, others)._end_of_year_accrual()
