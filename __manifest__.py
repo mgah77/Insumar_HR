@@ -6,7 +6,7 @@
 'author': "Mauricio Gah",
 'license': "AGPL-3",
 'application': "True",
-'version': "2.0",
+'version': "2.5",
 'data': ['security/ir.model.access.csv',    
          'security/groups.xml',
          'views/menu.xml',
@@ -14,6 +14,7 @@
          'views/prestamo.xml',
          'views/hr_leave_views.xml',
          'views/sueldos.xml',
+         'views/hr_leave_accrual_views.xml',
          'data/cron_administrativos.xml',
          'data/cron_progresivos.xml'        
 ],

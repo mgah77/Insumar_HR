@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Regla (nivel): secciones según el diseño pedido -->
+    <record id="hr_accrual_level_view_form_inherit_hire" model="ir.ui.view">
+        <field name="name">hr.leave.accrual.level.form.inherit.hire</field>
+        <field name="model">hr.leave.accrual.level</field>
+        <field name="inherit_id" ref="hr_holidays.hr_accrual_level_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence']" position="after">
+                <separator string="Fecha de referencia del devengo" colspan="2"/>
+                <field name="start_reference" widget="radio" string="Fecha de inicio"/>
+            </xpath>
+            <xpath expr="//label[@for='start_type']" position="replace">
+                <label for="start_type" string="después de la fecha de asignación" class="o_form_label"
+                       attrs="{'invisible': [('start_reference', '!=', 'allocation')]}"/>
+                <label for="start_type" string="después de la fecha de ingreso" class="o_form_label"
+                       attrs="{'invisible': [('start_reference', '!=', 'hire')]}"/>
+            </xpath>
+            <xpath expr="//label[@for='frequency']" position="before">
+                <separator string="Frecuencia de asignación" colspan="2"/>
+            </xpath>
+            <xpath expr="//field[@name='frequency']" position="attributes">
+                <attribute name="widget">radio</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Plan: la tarjeta de la regla refleja la referencia elegida -->
+    <record id="hr_accrual_plan_view_form_inherit_hire" model="ir.ui.view">
+        <field name="name">hr.leave.accrual.plan.form.inherit.hire.date</field>
+        <field name="model">hr.leave.accrual.plan</field>
+        <field name="inherit_id" ref="hr_holidays.hr_accrual_plan_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban//field[@name='start_type']" position="after">
+                <field name="start_reference"/>
+            </xpath>
+            <xpath expr="//t[@t-if='record.start_count.value > 0']" position="replace">
+                <t t-if="record.start_count.value > 0">
+                    Empieza <field name="start_count" widget="integer"/> <field name="start_type"/>
+                    <t t-if="record.start_reference.raw_value == 'hire'">después de la fecha de ingreso</t>
+                    <t t-else="">después de la fecha de asignación</t>
+                </t>
+            </xpath>
+            <xpath expr="//t[@t-if='record.start_count.value > 0']/following-sibling::t[1]" position="replace">
+                <t t-else="">
+                    <t t-if="record.start_reference.raw_value == 'hire'">Empieza desde la fecha de ingreso</t>
+                    <t t-else="">Empieza desde la fecha de asignación</t>
+                </t>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Asignación: pregunta de días anteriores al asignar el plan -->
+    <record id="hr_leave_allocation_view_form_inherit_hire" model="ir.ui.view">
+        <field name="name">hr.leave.allocation.form.inherit.hire.date</field>
+        <field name="model">hr.leave.allocation</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_form"/>
+        <field name="arch" type="xml">
+            <field name="accrual_plan_id" position="after">
+                <field name="previous_days"
+                       attrs="{'invisible': ['|', ('allocation_type', '!=', 'accrual'), ('uses_hire_date', '=', False)]}"/>
+                <field name="uses_hire_date" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
