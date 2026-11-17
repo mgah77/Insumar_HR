@@ -19,7 +19,7 @@
          'data/cron_progresivos.xml'        
 ],
 
-'depends': ['base' , 'contacts' , 'hr' , 'parches_insumar','hr_holidays'],
+'depends': ['base' , 'contacts' , 'hr' ,'hr_holidays'],
 'installable': True,
 'application': True,
 }
